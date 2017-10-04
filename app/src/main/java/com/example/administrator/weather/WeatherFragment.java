@@ -1,6 +1,7 @@
 package com.example.administrator.weather;
 
 import android.app.Fragment;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
@@ -29,6 +30,7 @@ public class WeatherFragment extends Fragment {
     TextView weatherIcon;
     TextView temperatureField;
     Handler handler;
+    Typeface weatherFont;
 
     public WeatherFragment() {
         this.handler = new Handler();
@@ -45,12 +47,14 @@ public class WeatherFragment extends Fragment {
         weatherIcon = (TextView)view.findViewById(R.id.weather_icon);
         temperatureField = (TextView)view.findViewById(R.id.degree);
 
+        weatherIcon.setTypeface(weatherFont);
         return view;
     }
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        weatherFont = Typeface.createFromAsset(getActivity().getAssets(),"fonts/weather.ttf");
         updateWeatherData(new CityPreference(getActivity()).getCity()); // 呼叫 weather api 去抓取天氣的資訊
     }
 
@@ -100,11 +104,11 @@ public class WeatherFragment extends Fragment {
 
             temperatureField.setText(String.format("%.2f",main.getDouble("temp")) + " ℃");
             DateFormat df = DateFormat.getDateInstance();
-            String updatedOn = df.format(new Date(json.getLong("dt")*1000));
+            String updatedOn = df.format(new Date(json.getLong("dt")*1000)); // multiply by 1000 , since java is  expecting millseconds
             updatedField.setText("Last updated  " + updatedOn);
             setWeatherICON(detailed.getInt("id"),
-                    json.getJSONObject("sys").getLong("sunrise") * 1000,
-                    json.getJSONObject("sys").getLong("sunset") * 1000);
+                    json.getJSONObject("sys").getLong("sunrise") * 1000, // multiply by 1000 , since java is  expecting millseconds
+                    json.getJSONObject("sys").getLong("sunset") * 1000); // multiply by 1000 , since java is  expecting millseconds
         }catch(Exception exception)
         {
             Log.e("Weather Error : " , exception.getMessage());
@@ -117,7 +121,7 @@ public class WeatherFragment extends Fragment {
         String icon = "";
         if(actualId == 800)
         {
-            long currentTime = new Date().getTime();
+            long currentTime = new Date().getTime(); // get millseconds
             if(currentTime >= sunrise && currentTime < sunset)
             {
                 icon = getActivity().getString(R.string.weather_sunny);
@@ -148,5 +152,10 @@ public class WeatherFragment extends Fragment {
             }
         }
         weatherIcon.setText(icon);
+    }
+
+    public void changeCity(String city)
+    {
+        updateWeatherData(city);
     }
 }

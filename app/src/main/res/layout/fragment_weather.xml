@@ -14,7 +14,8 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="City"/>
+        android:text="City"
+        android:textSize="50sp"/>
 
     <TextView
         android:id="@+id/updated"
@@ -23,7 +24,7 @@
         android:layout_below="@id/city"
         android:layout_centerHorizontal="true"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textSize="13sp"
+        android:textSize="30sp"
         android:text="Updated Weather" />
 
     <TextView
