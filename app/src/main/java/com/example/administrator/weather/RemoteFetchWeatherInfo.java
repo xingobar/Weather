@@ -15,7 +15,7 @@ import java.net.URL;
 
 public class RemoteFetchWeatherInfo {
 
-    private static final String WEATHER_API = "http://api.openweathermap.org/data/2.5/weather?q=%s&units=metric";;
+    private static final String WEATHER_API = "http://api.openweathermap.org/data/2.5/weather?q=%s,TW&units=metric";;
 
     public static JSONObject getWeatherInfoJSON(Context context,String city)
     {

@@ -17,11 +17,12 @@ public class CityPreference {
 
     public String getCity()
     {
-        return sharedPreferences.getString("city","Taiwan");
+        return sharedPreferences.getString("city","Taoyuan");
     }
 
     public void setCity(String city)
     {
         sharedPreferences.edit().putString("city",city).commit();
     }
+
 }

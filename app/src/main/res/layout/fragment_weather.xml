@@ -15,7 +15,9 @@
         android:layout_centerHorizontal="true"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="City"
-        android:textSize="50sp"/>
+        android:textSize="50sp"
+        android:textColor="@color/white"
+        android:textStyle="bold"/>
 
     <TextView
         android:id="@+id/updated"
@@ -25,7 +27,8 @@
         android:layout_centerHorizontal="true"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textSize="30sp"
-        android:text="Updated Weather" />
+        android:text="Updated Weather"
+        android:textColor="@color/white"/>
 
     <TextView
         android:id="@+id/weather_icon"
@@ -36,6 +39,7 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textSize="70sp"
         android:text="ICON"
+        android:textColor="@color/white"
         />
 
     <TextView
@@ -46,7 +50,8 @@
         android:layout_centerHorizontal="true"
         android:textSize="40sp"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Detail"/>
+        android:text="Detail"
+        android:textColor="@color/white"/>
 
     <TextView
         android:id="@+id/degree"
@@ -56,6 +61,7 @@
         android:layout_alignParentBottom="true"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textSize="60sp"
-        android:text="Degree"/>
+        android:text="Degree"
+        android:textColor="@color/white"/>
 
 </RelativeLayout>

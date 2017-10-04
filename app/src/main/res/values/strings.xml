@@ -1,7 +1,8 @@
 <resources>
     <string name="app_name">Weather</string>
+    <string name="change_city">Change City</string>
 
-    <string name="open_weather_maps_app_id">appId</string>
+    <string name="open_weather_maps_app_id">appid</string>
     <string name="weather_sunny">&#xf00d;</string>
     <string name="weather_clear_night">&#xf02e;</string>
 
@@ -13,4 +14,23 @@
     <string name="weather_drizzle">&#xf01c;</string>
 
     <string name="place_not_found">Sorry, no weather data found.</string>
+
+    <string-array name="city">
+        <item>Taipei</item>
+        <item>Taoyuan</item>
+        <item>Taichung</item>
+        <item>Tainan</item>
+        <item>Kaohsiung</item>
+        <item>Keelung</item>
+        <item>Hsinchu</item>
+        <item>Miaoli</item>
+        <item>Nantou</item>
+        <item>Yunlin</item>
+        <item>Pingtung</item>
+        <item>Yilan</item>
+        <item>Hualien</item>
+        <item>Taitung</item>
+        <item>Penghu</item>
+    </string-array>
+
 </resources>
